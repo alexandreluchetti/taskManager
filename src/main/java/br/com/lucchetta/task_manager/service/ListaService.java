@@ -18,18 +18,34 @@ public class ListaService {
     }
 
     public List<Lista> findAll() {
-        return listaRepository.findAll();
+        try {
+            return listaRepository.findAll();
+        } catch (Exception e) {
+            throw new RuntimeException("Nenhuma lista no banco de dados.");
+        }
     }
 
     public Lista findById(Long id) {
-        return listaRepository.findById(id).orElse(null);
+        try {
+            return listaRepository.findById(id).orElse(null);
+        } catch (Exception e) {
+            throw new RuntimeException("Nenhuma lista encontrada com o id informado.");
+        }
     }
 
     public Lista save(Lista lista) {
-        return listaRepository.save(lista);
+        try {
+            return listaRepository.save(lista);
+        } catch (Exception e){
+            throw new RuntimeException("Impossivel salvar lista.");
+        }
     }
 
     public void deleteById(Long id) {
-        listaRepository.deleteById(id);
+        try {
+            listaRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new RuntimeException("Nenhuma lista deletada.");
+        }
     }
 }

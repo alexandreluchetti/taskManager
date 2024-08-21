@@ -1,4 +1,4 @@
-package br.com.lucchetta.task_manager.controller;
+package br.com.lucchetta.task_manager.controller.lista.controller;
 
 import br.com.lucchetta.task_manager.model.Lista;
 import br.com.lucchetta.task_manager.service.ListaService;

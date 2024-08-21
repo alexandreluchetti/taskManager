@@ -18,16 +18,28 @@ public class ItemService {
     }
 
     public List<Item> findAllByListaId(Long listaId) {
-        return itemRepository.findAll().stream()
-                .filter(item -> item.getLista().getId().equals(listaId))
-                .toList();
+        try {
+            return itemRepository.findAll().stream()
+                    .filter(item -> item.getLista().getId().equals(listaId))
+                    .toList();
+        } catch (Exception e) {
+            throw new RuntimeException("Nenhum item encontrado com o listaId informado.");
+        }
     }
 
     public Item save(Item item) {
-        return itemRepository.save(item);
+        try {
+            return itemRepository.save(item);
+        } catch (Exception e) {
+            throw new RuntimeException("Impossivel salvar item");
+        }
     }
 
     public void deleteById(Long id) {
-        itemRepository.deleteById(id);
+        try {
+            itemRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new RuntimeException("Nenhum item deletado.");
+        }
     }
 }
