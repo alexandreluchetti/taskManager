@@ -2,6 +2,8 @@ package br.com.lucchetta.task_manager.controller;
 
 import br.com.lucchetta.task_manager.model.Lista;
 import br.com.lucchetta.task_manager.service.ListaService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/lista")
+@Tag(name = "Listas", description = "Operações relacionadas às listas")
 public class ListaController {
 
     private final ListaService listaService;
@@ -20,11 +23,13 @@ public class ListaController {
     }
 
     @GetMapping
+    @Operation(summary = "Obter todas as listas", description = "Retorna todas as listas disponíveis")
     public List<Lista> getAllListas() {
         return listaService.findAll();
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Obter lista pelo id", description = "Retorna uma lista de acordo com o id informado")
     public ResponseEntity<Lista> getListaById(@PathVariable Long id) {
         Lista lista = listaService.findById(id);
         if (lista == null) {
@@ -34,11 +39,13 @@ public class ListaController {
     }
 
     @PostMapping
+    @Operation(summary = "Cria uma lista", description = "Retorna a lista criada")
     public Lista createLista(@RequestBody Lista lista) {
         return listaService.save(lista);
     }
 
     @PutMapping("/{id}")
+    @Operation(summary = "Atualiza uma lista", description = "Retorna a lista, de acordo com o id informado, com os dados atualizados")
     public ResponseEntity<Lista> updateLista(@PathVariable Long id, @RequestBody Lista lista) {
         if (listaService.findById(id) == null) {
             return ResponseEntity.notFound().build();
@@ -48,6 +55,7 @@ public class ListaController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Deleta uma lista", description = "Deleta a lista de acordo com o id informado")
     public ResponseEntity<Void> deleteLista(@PathVariable Long id) {
         listaService.deleteById(id);
         return ResponseEntity.noContent().build();
