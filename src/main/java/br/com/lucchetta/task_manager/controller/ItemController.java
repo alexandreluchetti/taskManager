@@ -26,13 +26,13 @@ public class ItemController {
 
     @PostMapping
     public Item createItem(@PathVariable Long listaId, @RequestBody Item item) {
-        // Validar listaId e associar item com a lista correta
+        //TODO Validar listaId e associar item com a lista correta
         return itemService.save(item);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Item> updateItem(@PathVariable Long listaId, @PathVariable Long id, @RequestBody Item item) {
-        // Validar listaId e ID do item
+        //TODO Validar listaId e ID do item
         item.setId(id);
         return ResponseEntity.ok(itemService.save(item));
     }

@@ -18,6 +18,8 @@ repositories {
 }
 
 dependencies {
+	implementation("io.swagger.core.v3:swagger-models:2.2.22")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	compileOnly("org.projectlombok:lombok")
