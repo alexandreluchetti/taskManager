@@ -1,6 +1,7 @@
 package br.com.lucchetta.task_manager.controller.item.controller;
 
 import br.com.lucchetta.task_manager.controller.item.dto.ItemDto;
+import br.com.lucchetta.task_manager.exception.NoneResultException;
 import br.com.lucchetta.task_manager.model.Item;
 import br.com.lucchetta.task_manager.model.Lista;
 import br.com.lucchetta.task_manager.service.ItemService;
@@ -38,7 +39,8 @@ public class ItemController {
     @Operation(summary = "Obter um item", description = "Retorna o item de acordo com o id informado")
     public Item getItem(@PathVariable Long listaId, @PathVariable Long id) {
         Item item = getItemFromLista(listaId, id);
-        if (item == null) throw new RuntimeException("Nenhum item encontrado");
+        if (item == null) throw new NoneResultException("Nenhum item encontrado");
+
         return item;
     }
 
@@ -46,6 +48,8 @@ public class ItemController {
     @Operation(summary = "Criar um novo item", description = "Retornao item criado")
     public Item createItem(@PathVariable Long listaId, @RequestBody ItemDto dto) {
         Lista lista = listaService.findById(listaId);
+        if (lista == null) throw new NoneResultException("Nenhuma lista encontrada com o id informado");
+
         Item item = dto.toObject(lista);
         return itemService.save(item);
     }
@@ -54,7 +58,7 @@ public class ItemController {
     @Operation(summary = "Atualizar um item", description = "Retorna o item, de acordo com o id informado, com os dados atualizados")
     public ResponseEntity<Item> updateItem(@PathVariable Long listaId, @PathVariable Long id, @RequestBody ItemDto dto) {
         Item item = getItemFromLista(listaId, id);
-        if (item == null) throw new RuntimeException("Nenhum item encontrado");
+        if (item == null) throw new NoneResultException("Nenhum item encontrado com o id informado");
 
         Lista lista = listaService.findById(listaId);
         item.update(dto, lista);

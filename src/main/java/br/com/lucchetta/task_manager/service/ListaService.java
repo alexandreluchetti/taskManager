@@ -1,5 +1,7 @@
 package br.com.lucchetta.task_manager.service;
 
+import br.com.lucchetta.task_manager.exception.NoneResultException;
+import br.com.lucchetta.task_manager.exception.OperationException;
 import br.com.lucchetta.task_manager.model.Lista;
 import br.com.lucchetta.task_manager.repository.ListaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +23,7 @@ public class ListaService {
         try {
             return listaRepository.findAll();
         } catch (Exception e) {
-            throw new RuntimeException("Nenhuma lista no banco de dados.");
+            throw new NoneResultException("Nenhuma lista no banco de dados.");
         }
     }
 
@@ -29,7 +31,7 @@ public class ListaService {
         try {
             return listaRepository.findById(id).orElse(null);
         } catch (Exception e) {
-            throw new RuntimeException("Nenhuma lista encontrada com o id informado.");
+            throw new NoneResultException("Nenhuma lista encontrada com o id informado.");
         }
     }
 
@@ -37,7 +39,7 @@ public class ListaService {
         try {
             return listaRepository.save(lista);
         } catch (Exception e){
-            throw new RuntimeException("Impossivel salvar lista.");
+            throw new OperationException("Impossivel salvar lista.");
         }
     }
 
@@ -45,7 +47,7 @@ public class ListaService {
         try {
             listaRepository.deleteById(id);
         } catch (Exception e) {
-            throw new RuntimeException("Nenhuma lista deletada.");
+            throw new OperationException("Nenhuma lista deletada.");
         }
     }
 }

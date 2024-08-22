@@ -2,6 +2,7 @@ package br.com.lucchetta.task_manager.controller.lista.controller;
 
 import br.com.lucchetta.task_manager.controller.lista.dto.ListaDto;
 import br.com.lucchetta.task_manager.controller.lista.dto.ListaSemItensDto;
+import br.com.lucchetta.task_manager.exception.NoneResultException;
 import br.com.lucchetta.task_manager.model.Lista;
 import br.com.lucchetta.task_manager.service.ListaService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -35,7 +36,7 @@ public class ListaController {
     public ResponseEntity<Lista> getListaById(@PathVariable Long id) {
         Lista lista = listaService.findById(id);
         if (lista == null) {
-            return ResponseEntity.notFound().build();
+            throw new NoneResultException("Nenhuma lista encontrada com o id informado.");
         }
         return ResponseEntity.ok(lista);
     }
@@ -58,7 +59,7 @@ public class ListaController {
     public ResponseEntity<Lista> updateLista(@PathVariable Long id, @RequestBody ListaSemItensDto dto) {
         Lista lista = listaService.findById(id);
         if (lista == null) {
-            return ResponseEntity.notFound().build();
+            throw new NoneResultException("Nenhuma lista encontrada com o id informado.");
         }
 
         lista.setNome(dto.nome());

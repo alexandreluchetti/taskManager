@@ -1,5 +1,7 @@
 package br.com.lucchetta.task_manager.service;
 
+import br.com.lucchetta.task_manager.exception.NoneResultException;
+import br.com.lucchetta.task_manager.exception.OperationException;
 import br.com.lucchetta.task_manager.model.Item;
 import br.com.lucchetta.task_manager.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +25,7 @@ public class ItemService {
                     .filter(item -> item.getLista().getId().equals(listaId))
                     .toList();
         } catch (Exception e) {
-            throw new RuntimeException("Nenhum item encontrado com o listaId informado.");
+            throw new NoneResultException("Nenhum item encontrado.");
         }
     }
 
@@ -31,7 +33,7 @@ public class ItemService {
         try {
             return itemRepository.save(item);
         } catch (Exception e) {
-            throw new RuntimeException("Impossivel salvar item");
+            throw new OperationException("Impossivel salvar item");
         }
     }
 
@@ -39,7 +41,7 @@ public class ItemService {
         try {
             itemRepository.deleteById(id);
         } catch (Exception e) {
-            throw new RuntimeException("Nenhum item deletado.");
+            throw new OperationException("Nenhum item deletado.");
         }
     }
 }
