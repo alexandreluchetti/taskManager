@@ -6,19 +6,14 @@ import br.com.lucchetta.task_manager.model.Lista;
 
 import java.util.List;
 
-public record ListaDto(
+public record ListaSemItensDto(
 
-        String nome,
-
-        List<ItemDto> itemDtos
+        String nome
 
 ) {
 
     public Lista toObject() {
-        List<Item> itens = this.itemDtos.stream().map(ItemDto::toObject).toList();
-        Lista lista = new Lista(this.nome, itens);
-        itens.forEach(item -> item.setLista(lista));
-        return lista;
+        return new Lista(this.nome);
     }
 
 }

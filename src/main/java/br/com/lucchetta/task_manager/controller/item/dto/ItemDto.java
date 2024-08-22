@@ -19,4 +19,13 @@ public record ItemDto(
                 lista
         );
     }
+
+    public Item toObject() {
+        return new Item(
+                this.titulo,
+                this.estado,
+                this.prioridade,
+                null
+        );
+    }
 }

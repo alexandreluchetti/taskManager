@@ -1,11 +1,16 @@
 package br.com.lucchetta.task_manager.model;
 
 import br.com.lucchetta.task_manager.controller.item.dto.ItemDto;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Entity
+@AllArgsConstructor
 public class Item {
 
     @Id
@@ -23,6 +28,7 @@ public class Item {
 
     @ManyToOne
     @JoinColumn(name = "lista_id")
+    @JsonBackReference
     private Lista lista;
 
     public Item(String titulo, boolean estado, boolean prioridade, Lista lista) {
@@ -30,6 +36,9 @@ public class Item {
         this.estado = estado;
         this.prioridade = prioridade;
         this.lista = lista;
+    }
+
+    public Item() {
     }
 
     public void update(ItemDto dto, Lista lista) {

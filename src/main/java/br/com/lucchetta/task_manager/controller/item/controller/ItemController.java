@@ -34,6 +34,14 @@ public class ItemController {
         return itemService.findAllByListaId(listaId);
     }
 
+    @GetMapping("/{id}")
+    @Operation(summary = "Obter um item", description = "Retorna o item de acordo com o id informado")
+    public Item getItem(@PathVariable Long listaId, @PathVariable Long id) {
+        Item item = getItemFromLista(listaId, id);
+        if (item == null) throw new RuntimeException("Nenhum item encontrado");
+        return item;
+    }
+
     @PostMapping
     @Operation(summary = "Criar um novo item", description = "Retornao item criado")
     public Item createItem(@PathVariable Long listaId, @RequestBody ItemDto dto) {
