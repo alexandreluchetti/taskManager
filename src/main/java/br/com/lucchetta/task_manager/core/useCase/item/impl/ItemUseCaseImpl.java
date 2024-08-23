@@ -6,6 +6,7 @@ import br.com.lucchetta.task_manager.configuration.exception.OperationException;
 import br.com.lucchetta.task_manager.core.entity.Item;
 import br.com.lucchetta.task_manager.dataprovider.item.ItemRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ItemUseCaseImpl implements ItemUseCase {
@@ -20,6 +21,7 @@ public class ItemUseCaseImpl implements ItemUseCase {
     public List<Item> findAllByListaId(Long listaId) {
         try {
             return itemRepository.findAll().stream()
+                    .filter(item -> item.getLista() != null)
                     .filter(item -> item.getLista().getId().equals(listaId))
                     .toList();
         } catch (Exception e) {
