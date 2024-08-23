@@ -2,49 +2,15 @@
 
 Bem-vindo ao TaskManager API! Este é um serviço de gerenciamento de tarefas que permite criar, atualizar, listar e excluir tarefas.
 
+Este projeto é uma aplicação Java desenvolvida seguindo os princípios da `Clean Architecture`. A Clean Architecture visa criar sistemas que são independentes de frameworks, facilmente testáveis, e com uma separação clara entre regras de negócio e detalhes de implementação.
+
+[//]: # (![Clean Archtecture]&#40;assets/clean-architecture.jpg&#41;)
+<div align="center">
+    <img src="assets/clean-architecture.jpg" alt="Clean Archtecture" width="400"/>
+</div>
+
 ### Introdução
 A TaskManager API permite a você gerenciar suas tarefas de maneira eficiente e organizada. Com ela, você pode adicionar novas tarefas, visualizar todas as tarefas, atualizar tarefas existentes e removê-las quando necessário.
-
-[//]: # (## Sumário)
-
-[//]: # ()
-[//]: # (- [Requisitos]&#40;#requisitos&#41;)
-
-[//]: # (- [Instalação]&#40;#instalação&#41;)
-
-[//]: # (- [Uso]&#40;#uso&#41;)
-
-[//]: # (- [Testes]&#40;#testes&#41;)
-
-[//]: # (- [Docker]&#40;#docker&#41;)
-
-[//]: # (- [Contribuição]&#40;#contribuição&#41;)
-
-[//]: # (- [Licença]&#40;#licença&#41;)
-
-[//]: # (  Introdução)
-
-[//]: # (  Instalação)
-
-[//]: # (  Uso)
-
-[//]: # (  Endpoints)
-
-[//]: # (  Criar Tarefa)
-
-[//]: # (  Listar Tarefas)
-
-[//]: # (  Atualizar Tarefa)
-
-[//]: # (  Excluir Tarefa)
-
-[//]: # (  Autenticação)
-
-[//]: # (  Exemplos)
-
-[//]: # (  Contribuição)
-
-[//]: # (  Licença)
 
 ## Requisitos
 

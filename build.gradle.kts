@@ -4,14 +4,13 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.6"
 }
 
-group = "br.com.lucchetta"
-version = "0.0.2"
+val artifactId = "task-manager"
+val projectVersion = "1.0.0"
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
-}
+group = "br.com.lucchetta"
+version = projectVersion
+
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 repositories {
 	mavenCentral()
@@ -26,9 +25,19 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.junit.jupiter:junit-jupiter-api")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.withType<Jar> {
+	archiveBaseName.set(artifactId)
+	archiveVersion.set(projectVersion)
+	archiveClassifier.set("")
+	manifest {
+		attributes["Main-Class"] = "br.com.lucchetta.task_manager.TaskManagerApplication"
+	}
 }
