@@ -1,5 +1,6 @@
-package br.com.lucchetta.task_manager.core.entity;
+package br.com.lucchetta.task_manager.core.lista.entity;
 
+import br.com.lucchetta.task_manager.core.item.entity.Item;
 import br.com.lucchetta.task_manager.entrypoint.lista.dto.ListaDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

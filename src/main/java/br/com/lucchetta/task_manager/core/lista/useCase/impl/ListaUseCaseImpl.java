@@ -1,9 +1,9 @@
-package br.com.lucchetta.task_manager.core.useCase.lista.impl;
+package br.com.lucchetta.task_manager.core.lista.useCase.impl;
 
-import br.com.lucchetta.task_manager.core.useCase.lista.ListaUseCase;
+import br.com.lucchetta.task_manager.core.lista.useCase.ListaUseCase;
 import br.com.lucchetta.task_manager.configuration.exception.NoneResultException;
 import br.com.lucchetta.task_manager.configuration.exception.OperationException;
-import br.com.lucchetta.task_manager.core.entity.Lista;
+import br.com.lucchetta.task_manager.core.lista.entity.Lista;
 import br.com.lucchetta.task_manager.dataprovider.lista.ListaRepository;
 
 import java.util.List;

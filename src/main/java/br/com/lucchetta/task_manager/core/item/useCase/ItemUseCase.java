@@ -1,6 +1,6 @@
-package br.com.lucchetta.task_manager.core.useCase.item;
+package br.com.lucchetta.task_manager.core.item.useCase;
 
-import br.com.lucchetta.task_manager.core.entity.Item;
+import br.com.lucchetta.task_manager.core.item.entity.Item;
 
 import java.util.List;
 

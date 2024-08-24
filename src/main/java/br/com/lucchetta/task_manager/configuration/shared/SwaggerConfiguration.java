@@ -1,4 +1,4 @@
-package br.com.lucchetta.task_manager.configuration.share;
+package br.com.lucchetta.task_manager.configuration.shared;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.info.Info;

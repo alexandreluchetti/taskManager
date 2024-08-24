@@ -1,12 +1,11 @@
-package br.com.lucchetta.task_manager.core.useCase.item.impl;
+package br.com.lucchetta.task_manager.core.item.useCase.impl;
 
-import br.com.lucchetta.task_manager.core.useCase.item.ItemUseCase;
+import br.com.lucchetta.task_manager.core.item.useCase.ItemUseCase;
 import br.com.lucchetta.task_manager.configuration.exception.NoneResultException;
 import br.com.lucchetta.task_manager.configuration.exception.OperationException;
-import br.com.lucchetta.task_manager.core.entity.Item;
+import br.com.lucchetta.task_manager.core.item.entity.Item;
 import br.com.lucchetta.task_manager.dataprovider.item.ItemRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ItemUseCaseImpl implements ItemUseCase {

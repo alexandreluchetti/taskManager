@@ -1,6 +1,6 @@
 package br.com.lucchetta.task_manager.entrypoint.item.controller;
 
-import br.com.lucchetta.task_manager.core.entity.Item;
+import br.com.lucchetta.task_manager.core.item.entity.Item;
 import br.com.lucchetta.task_manager.entrypoint.item.dto.ItemDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

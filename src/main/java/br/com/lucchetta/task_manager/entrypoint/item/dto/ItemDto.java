@@ -1,7 +1,7 @@
 package br.com.lucchetta.task_manager.entrypoint.item.dto;
 
-import br.com.lucchetta.task_manager.core.entity.Item;
-import br.com.lucchetta.task_manager.core.entity.Lista;
+import br.com.lucchetta.task_manager.core.item.entity.Item;
+import br.com.lucchetta.task_manager.core.lista.entity.Lista;
 
 public record ItemDto(
 

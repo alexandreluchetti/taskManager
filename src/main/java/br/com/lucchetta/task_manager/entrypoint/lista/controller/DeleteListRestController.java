@@ -1,6 +1,6 @@
 package br.com.lucchetta.task_manager.entrypoint.lista.controller;
 
-import br.com.lucchetta.task_manager.core.useCase.lista.ListaUseCase;
+import br.com.lucchetta.task_manager.core.lista.useCase.ListaUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

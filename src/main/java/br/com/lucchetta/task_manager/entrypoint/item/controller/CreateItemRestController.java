@@ -1,10 +1,10 @@
 package br.com.lucchetta.task_manager.entrypoint.item.controller;
 
 import br.com.lucchetta.task_manager.configuration.exception.NoneResultException;
-import br.com.lucchetta.task_manager.core.entity.Item;
-import br.com.lucchetta.task_manager.core.entity.Lista;
-import br.com.lucchetta.task_manager.core.useCase.item.ItemUseCase;
-import br.com.lucchetta.task_manager.core.useCase.lista.ListaUseCase;
+import br.com.lucchetta.task_manager.core.item.entity.Item;
+import br.com.lucchetta.task_manager.core.lista.entity.Lista;
+import br.com.lucchetta.task_manager.core.item.useCase.ItemUseCase;
+import br.com.lucchetta.task_manager.core.lista.useCase.ListaUseCase;
 import br.com.lucchetta.task_manager.entrypoint.item.dto.ItemDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

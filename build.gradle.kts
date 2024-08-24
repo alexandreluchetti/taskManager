@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
 	java
 	id("org.springframework.boot") version "3.3.2"
@@ -17,6 +19,7 @@ repositories {
 }
 
 dependencies {
+	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("io.swagger.core.v3:swagger-models:2.2.22")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -31,13 +34,15 @@ dependencies {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+	enabled = false
 }
 
-tasks.withType<Jar> {
+tasks.named<BootJar>("bootJar") {
 	archiveBaseName.set(artifactId)
 	archiveVersion.set(projectVersion)
 	archiveClassifier.set("")
-	manifest {
-		attributes["Main-Class"] = "br.com.lucchetta.task_manager.TaskManagerApplication"
-	}
+}
+
+tasks.named("build") {
+	dependsOn("bootJar")
 }

@@ -1,4 +1,4 @@
-package br.com.lucchetta.task_manager.core.entity;
+package br.com.lucchetta.task_manager.configuration.exception;
 
 public record ExceptionEntity(
 

@@ -19,7 +19,6 @@ A TaskManager API permite a você gerenciar suas tarefas de maneira eficiente e 
 - Gradle
 - JPA
 - MySQL
-- Docker
 - Swagger
 
 ## Instalação
@@ -48,37 +47,61 @@ Depois de compilar o projeto, você pode executar o JAR gerado com o seguinte co
 ./gradlew bootRun
 ```
 
-CONTINUAR
+### Operações disponíveis
+```text
+GET - /api/lista/{listaID}/item/{id}: Obter um item de acordo com o listaId e itemId do item informado.
 
+GET - /api/lista/{listaID}/item: Obter todos os itens de acordo com o listaId informado.
 
+POST - /api/lista/{listaID}/item: Cria um item para a lista com o listaId informado.
 
+PUT - /api/lista/{listaID}/item/{id}: Atualiza um item de acordo com o listaId, itemId e ItemDto informados.
 
+DELETE - /api/lista/{listaId/item: Deleta um item de acordo com o listaId e itemId informados.
 
+GET - /api/lista/{listaID}: Obter uma lista de acorco com o id informado.
 
+GET - /api/lista: Obter todas as listas.
 
+POST - /api/lista: Cria uma lista de acordo com o ListaDto informado.
 
+PUT - /api/lista/{listaId}: Atualiza uma lista de acordo com o listaId e ListaSemItensDto informados. Obs.: Para alterar os itens de uma lista, utiliza a operacao PUT - /api/lista/{listaId}/item/{id}.
 
-
-
-
-
-## Docker
-
-### Construindo a Imagem Docker
-
-Para construir a imagem Docker do projeto, execute:
-
-```sh
-docker build -t snail-supera-project-java .
+DELETE - /api/lista/{listaId}: Deleta uma lista de acordo com o listaID informado.
+```
+#### - ItemDto:
+```json
+{
+  "titulo": "string",
+  "estado": true,
+  "prioridade": true
+}
 ```
 
-### Executando o Contêiner Docker
-
-Depois de construir a imagem, você pode executar o contêiner usando:
-
-```sh
-docker run -it --rm snail-supera-project-java
+#### - ListaSemItensDto
+```json
+{
+  "nome": "string"
+}
 ```
+
+#### - ListaDto
+```json
+{
+  "nome": "string",
+  "itemDtos": [
+    {
+      "titulo": "string",
+      "estado": true,
+      "prioridade": true
+    }
+  ]
+}
+```
+
+<div align="center">
+    <img src="assets/swagger-ps.png" alt="Swagger da aplicacao"/>
+</div>
 
 ## Contribuição
 
