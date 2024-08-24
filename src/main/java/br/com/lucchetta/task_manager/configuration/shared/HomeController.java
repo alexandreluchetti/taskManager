@@ -1,4 +1,4 @@
-package br.com.lucchetta.task_manager.configuration.share;
+package br.com.lucchetta.task_manager.configuration.shared;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

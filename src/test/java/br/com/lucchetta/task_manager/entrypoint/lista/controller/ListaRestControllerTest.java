@@ -1,6 +1,6 @@
 package br.com.lucchetta.task_manager.entrypoint.lista.controller;
 
-import br.com.lucchetta.task_manager.core.entity.Lista;
+import br.com.lucchetta.task_manager.core.lista.entity.Lista;
 import br.com.lucchetta.task_manager.entrypoint.lista.dto.ListaDto;
 import br.com.lucchetta.task_manager.entrypoint.lista.dto.ListaSemItensDto;
 import org.junit.jupiter.api.Assertions;

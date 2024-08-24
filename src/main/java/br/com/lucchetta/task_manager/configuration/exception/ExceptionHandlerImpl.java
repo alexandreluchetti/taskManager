@@ -1,6 +1,5 @@
 package br.com.lucchetta.task_manager.configuration.exception;
 
-import br.com.lucchetta.task_manager.core.entity.ExceptionEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

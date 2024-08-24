@@ -1,8 +1,8 @@
 package br.com.lucchetta.task_manager.entrypoint.lista.dto;
 
 import br.com.lucchetta.task_manager.entrypoint.item.dto.ItemDto;
-import br.com.lucchetta.task_manager.core.entity.Item;
-import br.com.lucchetta.task_manager.core.entity.Lista;
+import br.com.lucchetta.task_manager.core.item.entity.Item;
+import br.com.lucchetta.task_manager.core.lista.entity.Lista;
 
 import java.util.List;
 

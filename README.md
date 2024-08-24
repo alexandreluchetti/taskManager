@@ -19,7 +19,6 @@ A TaskManager API permite a você gerenciar suas tarefas de maneira eficiente e 
 - Gradle
 - JPA
 - MySQL
-- Docker
 - Swagger
 
 ## Instalação
@@ -103,35 +102,6 @@ DELETE - /api/lista/{listaId}: Deleta uma lista de acordo com o listaID informad
 <div align="center">
     <img src="assets/swagger-ps.png" alt="Swagger da aplicacao"/>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-## Docker
-
-### Construindo a Imagem Docker
-
-Para construir a imagem Docker do projeto, execute:
-
-```sh
-docker build -t snail-supera-project-java .
-```
-
-### Executando o Contêiner Docker
-
-Depois de construir a imagem, você pode executar o contêiner usando:
-
-```sh
-docker run -it --rm snail-supera-project-java
-```
 
 ## Contribuição
 
