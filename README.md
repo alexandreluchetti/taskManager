@@ -39,6 +39,8 @@ cd taskManager
 
 ## Uso
 
+O arquivo `Dump20240824.sql` contém todo o schema e estrutura de banco de dados necessários para a execução da aplicação. Importe-o para o banco de dados local e altere as configurações no arquivo `applicarion.properties` conforme necessário. 
+
 ### Executando a Aplicação
 
 Depois de compilar o projeto, você pode executar o JAR gerado com o seguinte comando:
